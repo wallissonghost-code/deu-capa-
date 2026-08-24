@@ -3,105 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#111111" />
-  <meta name="description" content="DEU CAPA — revista digital para divulgar participantes, ensaios, eventos e histórias." />
+  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="DEU CAPA — revista digital premium para histórias, ensaios e participantes em destaque." />
   <title>DEU CAPA — Revista Digital</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="DEU CAPA">DEU <span>CAPA</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <a class="brand" href="#inicio" aria-label="DEU CAPA">
+      <strong>DEU CAPA</strong><small>REVISTA DIGITAL</small>
+    </a>
     <nav id="mainNav">
-      <a href="#inicio">Início</a>
-      <a href="#edicao">Edição</a>
+      <a class="active" href="#inicio">Início</a>
       <a href="#participantes">Participantes</a>
-      <a href="#participar">Quero participar</a>
+      <a href="#edicoes">Edições</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#sobre">Sobre</a>
     </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
   </header>
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-overlay"></div>
+      <div class="hero-shade"></div>
       <div class="hero-content">
-        <p class="eyebrow">REVISTA DIGITAL • EDIÇÃO #01</p>
-        <h1>Gente real.<br><em>Histórias que merecem capa.</em></h1>
-        <p class="hero-copy">Uma vitrine digital para participantes, ensaios, eventos, talentos e momentos que merecem ser vistos.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#participantes">Ver participantes</a>
-          <a class="btn btn-ghost" href="#participar">Quero aparecer</a>
-        </div>
+        <p class="kicker">EDIÇÃO #01 <span></span> 2026</p>
+        <h1><span>DEU</span><em>CAPA</em></h1>
+        <p class="hero-copy">Muito mais que uma revista.<br>É sobre histórias que merecem ser vistas.</p>
+        <a class="outline-btn" href="#participantes">VER EDIÇÃO <b>→</b></a>
       </div>
-      <div class="edition-badge"><strong>01</strong><span>AGO<br>2026</span></div>
+      <div class="edition-index" aria-hidden="true"><strong>01</strong><i></i><span>02</span><span>03</span></div>
     </section>
 
-    <section class="intro section" id="edicao">
-      <div>
-        <p class="eyebrow dark">EDIÇÃO ATUAL</p>
-        <h2>Começamos simples.<br>Mas com presença.</h2>
+    <section class="participants-premium" id="participantes">
+      <div class="section-intro">
+        <p class="gold-label">EM DESTAQUE <span></span></p>
+        <h2>Participantes<br><em>em evidência</em></h2>
+        <p>Conheça os talentos e histórias que brilham nesta edição especial da DEU CAPA.</p>
+        <a href="#participantGrid" class="light-btn">VER TODOS <b>→</b></a>
       </div>
-      <p>Esta primeira edição foi pensada para destacar pessoas. Sem excesso de menus ou recursos: fotos grandes, nome do participante, uma pequena apresentação e contato social opcional.</p>
-    </section>
-
-    <section class="featured section">
-      <div class="featured-photo placeholder-photo"><span>FOTO DE DESTAQUE</span></div>
-      <div class="featured-copy">
-        <p class="eyebrow dark">CAPA DA EDIÇÃO</p>
-        <h2>Seu destaque pode estar aqui.</h2>
-        <p>A capa principal pode ser trocada a cada edição ou evento. Ideal para aniversariantes, modelos, artistas, convidados, equipes ou participantes escolhidos pela revista.</p>
-        <a href="#participar" class="text-link">Participar da próxima edição →</a>
-      </div>
-    </section>
-
-    <section class="participants section" id="participantes">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow dark">GALERIA</p>
-          <h2>Participantes</h2>
-        </div>
-        <p>Toque em uma foto para abrir o perfil.</p>
-      </div>
-
       <div class="participant-grid" id="participantGrid"></div>
     </section>
 
-    <section class="how section">
-      <p class="eyebrow">COMO FUNCIONA</p>
-      <h2>Entrar na revista é simples.</h2>
-      <div class="steps">
-        <article><span>01</span><h3>Envie suas fotos</h3><p>Você escolhe as melhores imagens que quer divulgar.</p></article>
-        <article><span>02</span><h3>Montamos seu espaço</h3><p>Organizamos foto, nome, mini apresentação e redes sociais.</p></article>
-        <article><span>03</span><h3>A edição vai ao ar</h3><p>Você recebe o link para compartilhar com quem quiser.</p></article>
+    <section class="editorial-feature" id="edicoes">
+      <div class="feature-copy">
+        <p class="gold-label">ENSAIO EM DESTAQUE <span></span></p>
+        <h2>Luz que<br><em>conta histórias</em></h2>
+        <p>Cada clique revela mais que imagens. Revela essência, verdade e emoção.</p>
+        <a class="outline-btn small" href="#galeria">VER ENSAIO <b>→</b></a>
+      </div>
+      <div class="feature-image" role="img" aria-label="Ensaio editorial em preto e branco"></div>
+      <div class="feature-count"><strong>01</strong><span>/ 06</span></div>
+    </section>
+
+    <section class="gallery" id="galeria">
+      <div class="gallery-title"><p>GALERIA <span></span></p><h2>Momentos <em>que ficam</em></h2></div>
+      <div class="gallery-strip">
+        <div class="gallery-photo g1"></div>
+        <div class="gallery-photo g2"></div>
+        <div class="gallery-photo g3"><a class="outline-btn small" href="#participar">VER GALERIA <b>→</b></a></div>
+        <div class="gallery-photo g4"></div>
+        <div class="gallery-photo g5"></div>
       </div>
     </section>
 
-    <section class="cta section" id="participar">
-      <p class="eyebrow">PRÓXIMA EDIÇÃO</p>
-      <h2>Quer aparecer na DEU CAPA?</h2>
-      <p>Solicite sua participação. O orçamento e os detalhes são combinados diretamente por mensagem.</p>
-      <a class="btn btn-light" id="contactButton" href="#">Solicitar participação</a>
-      <small>O botão de contato pode ser ligado ao WhatsApp ou Instagram depois.</small>
+    <section class="stats" id="sobre">
+      <article><span>♙</span><strong>150+</strong><p>PARTICIPANTES</p></article>
+      <article><span>▣</span><strong>10+</strong><p>ENSAIOS</p></article>
+      <article><span>◎</span><strong>8</strong><p>CIDADES</p></article>
+      <article><span>☆</span><strong>1</strong><p>PROPÓSITO<br>MUITAS HISTÓRIAS</p></article>
+    </section>
+
+    <section class="cta" id="participar">
+      <p class="gold-label">PRÓXIMA EDIÇÃO <span></span></p>
+      <h2>Sua história pode ser<br><em>a próxima capa.</em></h2>
+      <p>Participe da próxima edição da DEU CAPA e transforme seu momento em uma experiência editorial.</p>
+      <a class="outline-btn" id="contactButton" href="#">QUERO PARTICIPAR <b>→</b></a>
     </section>
   </main>
 
   <dialog class="profile-modal" id="profileModal">
     <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
-    <div class="modal-photo placeholder-photo" id="modalPhoto"></div>
+    <div class="modal-photo" id="modalPhoto"></div>
     <div class="modal-content">
-      <p class="eyebrow dark">PARTICIPANTE</p>
+      <p class="gold-label">PARTICIPANTE <span></span></p>
       <h2 id="modalName"></h2>
       <p id="modalBio"></p>
-      <a id="modalSocial" class="text-link" href="#" target="_blank" rel="noopener">Ver rede social →</a>
+      <a id="modalSocial" class="text-link" href="#" target="_blank" rel="noopener">VER INSTAGRAM →</a>
     </div>
   </dialog>
 
   <footer>
-    <a class="brand footer-brand" href="#inicio">DEU <span>CAPA</span></a>
-    <p>Revista digital independente • 2026</p>
-    <a href="admin.html" style="color:inherit;font-size:12px;opacity:.55;text-decoration:none">Painel</a>
+    <div class="footer-brand"><strong>DEU CAPA</strong><small>REVISTA DIGITAL</small></div>
+    <p>Muito mais que uma revista.<br>É sobre histórias que merecem ser vistas.</p>
+    <div><b>NAVEGAÇÃO</b><a href="#inicio">Início</a><a href="#participantes">Participantes</a><a href="#edicoes">Edições</a><a href="#galeria">Galeria</a></div>
+    <div><b>SIGA A DEU CAPA</b><p>@deucapa</p><a href="admin.html" class="admin-link">Painel administrativo</a></div>
+    <small class="copyright">© 2026 DEU CAPA Revista Digital. Todos os direitos reservados.</small>
   </footer>
 
   <script src="app.js"></script>
