@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="description" content="DEU CAPA — revista digital para divulgar participantes, ensaios, eventos e histórias." />
+  <title>DEU CAPA — Revista Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="DEU CAPA">DEU <span>CAPA</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <nav id="mainNav">
+      <a href="#inicio">Início</a>
+      <a href="#edicao">Edição</a>
+      <a href="#participantes">Participantes</a>
+      <a href="#participar">Quero participar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">REVISTA DIGITAL • EDIÇÃO #01</p>
+        <h1>Gente real.<br><em>Histórias que merecem capa.</em></h1>
+        <p class="hero-copy">Uma vitrine digital para participantes, ensaios, eventos, talentos e momentos que merecem ser vistos.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#participantes">Ver participantes</a>
+          <a class="btn btn-ghost" href="#participar">Quero aparecer</a>
+        </div>
+      </div>
+      <div class="edition-badge"><strong>01</strong><span>AGO<br>2026</span></div>
+    </section>
+
+    <section class="intro section" id="edicao">
+      <div>
+        <p class="eyebrow dark">EDIÇÃO ATUAL</p>
+        <h2>Começamos simples.<br>Mas com presença.</h2>
+      </div>
+      <p>Esta primeira edição foi pensada para destacar pessoas. Sem excesso de menus ou recursos: fotos grandes, nome do participante, uma pequena apresentação e contato social opcional.</p>
+    </section>
+
+    <section class="featured section">
+      <div class="featured-photo placeholder-photo"><span>FOTO DE DESTAQUE</span></div>
+      <div class="featured-copy">
+        <p class="eyebrow dark">CAPA DA EDIÇÃO</p>
+        <h2>Seu destaque pode estar aqui.</h2>
+        <p>A capa principal pode ser trocada a cada edição ou evento. Ideal para aniversariantes, modelos, artistas, convidados, equipes ou participantes escolhidos pela revista.</p>
+        <a href="#participar" class="text-link">Participar da próxima edição →</a>
+      </div>
+    </section>
+
+    <section class="participants section" id="participantes">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark">GALERIA</p>
+          <h2>Participantes</h2>
+        </div>
+        <p>Toque em uma foto para abrir o perfil.</p>
+      </div>
+
+      <div class="participant-grid" id="participantGrid"></div>
+    </section>
+
+    <section class="how section">
+      <p class="eyebrow">COMO FUNCIONA</p>
+      <h2>Entrar na revista é simples.</h2>
+      <div class="steps">
+        <article><span>01</span><h3>Envie suas fotos</h3><p>Você escolhe as melhores imagens que quer divulgar.</p></article>
+        <article><span>02</span><h3>Montamos seu espaço</h3><p>Organizamos foto, nome, mini apresentação e redes sociais.</p></article>
+        <article><span>03</span><h3>A edição vai ao ar</h3><p>Você recebe o link para compartilhar com quem quiser.</p></article>
+      </div>
+    </section>
+
+    <section class="cta section" id="participar">
+      <p class="eyebrow">PRÓXIMA EDIÇÃO</p>
+      <h2>Quer aparecer na DEU CAPA?</h2>
+      <p>Solicite sua participação. O orçamento e os detalhes são combinados diretamente por mensagem.</p>
+      <a class="btn btn-light" id="contactButton" href="#">Solicitar participação</a>
+      <small>O botão de contato pode ser ligado ao WhatsApp ou Instagram depois.</small>
+    </section>
+  </main>
+
+  <dialog class="profile-modal" id="profileModal">
+    <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+    <div class="modal-photo placeholder-photo" id="modalPhoto"></div>
+    <div class="modal-content">
+      <p class="eyebrow dark">PARTICIPANTE</p>
+      <h2 id="modalName"></h2>
+      <p id="modalBio"></p>
+      <a id="modalSocial" class="text-link" href="#" target="_blank" rel="noopener">Ver rede social →</a>
+    </div>
+  </dialog>
+
+  <footer>
+    <a class="brand footer-brand" href="#inicio">DEU <span>CAPA</span></a>
+    <p>Revista digital independente • 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
