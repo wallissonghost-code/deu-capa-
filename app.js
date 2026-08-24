@@ -1,8 +1,8 @@
 const defaultParticipants = [
-  { id:'p1', name:'Júlia Martins', role:'São Paulo — SP', bio:'Presença, personalidade e uma história que merece ser vista.', social:'', photo:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85' },
-  { id:'p2', name:'Pedro Henrique', role:'Curitiba — PR', bio:'Um olhar autoral para quem transforma presença em narrativa visual.', social:'', photo:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=85' },
-  { id:'p3', name:'Larissa Almeida', role:'Belo Horizonte — MG', bio:'Elegância, atitude e um ensaio pensado para ficar na memória.', social:'', photo:'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=85' },
-  { id:'p4', name:'Gabriel Santos', role:'Salvador — BA', bio:'Histórias reais, fotografadas com estética editorial e identidade.', social:'', photo:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85' }
+  { id:'p1', name:'Júlia Martins', role:'São Paulo — SP', bio:'Presença, personalidade e uma história que merece ser vista.', social:'', photo:'assets/p1.jpg' },
+  { id:'p2', name:'Pedro Henrique', role:'Curitiba — PR', bio:'Um olhar autoral para quem transforma presença em narrativa visual.', social:'', photo:'assets/p2.jpg' },
+  { id:'p3', name:'Larissa Almeida', role:'Belo Horizonte — MG', bio:'Elegância, atitude e um ensaio pensado para ficar na memória.', social:'', photo:'assets/p3.jpg' },
+  { id:'p4', name:'Gabriel Santos', role:'Salvador — BA', bio:'Histórias reais, fotografadas com estética editorial e identidade.', social:'', photo:'assets/p4.jpg' }
 ];
 
 function getParticipants(){
