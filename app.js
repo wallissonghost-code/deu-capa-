@@ -28,7 +28,7 @@ function renderParticipants(){
   grid.innerHTML='';
   participants.slice(0,8).forEach((person,index)=>{
     const card=document.createElement('button');
-    card.className='participant-card';
+    card.className='participant-card reveal';
     const photo=person.photo||defaultParticipants[index%defaultParticipants.length].photo;
     const photoStyle=`style="background-image:url('${String(photo).replace(/'/g,'%27')}')"`;
     card.innerHTML=`
@@ -41,6 +41,7 @@ function renderParticipants(){
     card.addEventListener('click',()=>openProfile({...person,photo},index));
     grid.appendChild(card);
   });
+  observeReveals();
 }
 
 function openProfile(person,index){
@@ -68,7 +69,27 @@ function escapeHtml(value=''){
   return String(value).replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
 }
 
+let revealObserver;
+function observeReveals(){
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
+    return;
+  }
+  if(!revealObserver){
+    revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  }
+  document.querySelectorAll('.reveal:not(.is-visible)').forEach(el=>revealObserver.observe(el));
+}
+
 renderParticipants();
+observeReveals();
 window.addEventListener('storage',event=>{if(event.key==='deuCapaParticipants')renderParticipants();});
 
 document.getElementById('modalClose').addEventListener('click',()=>modal.close());
@@ -78,6 +99,9 @@ const menuToggle=document.getElementById('menuToggle');
 const mainNav=document.getElementById('mainNav');
 menuToggle.addEventListener('click',()=>mainNav.classList.toggle('open'));
 mainNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>mainNav.classList.remove('open')));
+
+const topbar=document.querySelector('.topbar');
+window.addEventListener('scroll',()=>topbar.classList.toggle('scrolled',window.scrollY>40),{passive:true});
 
 document.getElementById('contactButton').addEventListener('click',event=>{
   event.preventDefault();
