@@ -1,87 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DEU CAPA — Painel</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="admin.css" />
-</head>
-<body>
-  <header class="admin-topbar">
-    <div>
-      <p class="eyebrow">DEU CAPA</p>
-      <h1>Painel da revista</h1>
-    </div>
-    <a href="index.html" class="outline-btn">Ver revista</a>
-  </header>
-
-  <main class="admin-shell">
-    <section class="editor-card">
-      <div class="section-title">
-        <div>
-          <span class="step">01</span>
-          <h2>Novo participante</h2>
-        </div>
-        <button id="resetForm" class="text-btn" type="button">Limpar</button>
-      </div>
-
-      <form id="participantForm">
-        <input type="hidden" id="participantId" />
-
-        <label class="photo-upload" for="photoInput">
-          <input id="photoInput" type="file" accept="image/*" hidden />
-          <div id="photoPreview" class="photo-preview">
-            <span>+</span>
-            <strong>Adicionar foto</strong>
-            <small>JPG, PNG ou WEBP</small>
-          </div>
-        </label>
-
-        <div class="field-grid">
-          <label>Nome
-            <input id="nameInput" maxlength="60" required placeholder="Ex.: Ana Souza" />
-          </label>
-          <label>Destaque / categoria
-            <input id="roleInput" maxlength="60" placeholder="Ex.: Ensaio especial" />
-          </label>
-        </div>
-
-        <label>Descrição
-          <textarea id="bioInput" maxlength="320" rows="5" placeholder="Uma apresentação curta sobre a pessoa, ensaio ou história..."></textarea>
-          <small><span id="bioCount">0</span>/320</small>
-        </label>
-
-        <label>Instagram ou link
-          <input id="socialInput" placeholder="@usuario ou https://..." />
-        </label>
-
-        <div class="form-actions">
-          <button class="primary-btn" type="submit" id="saveButton">Publicar participante</button>
-          <p id="saveStatus" role="status"></p>
-        </div>
-      </form>
-    </section>
-
-    <section class="list-card">
-      <div class="section-title">
-        <div>
-          <span class="step">02</span>
-          <h2>Publicados</h2>
-        </div>
-        <span class="count-badge" id="participantCount">0</span>
-      </div>
-      <div id="adminList" class="admin-list"></div>
-    </section>
-  </main>
-
-  <footer class="admin-footer">
-    <p>Protótipo administrativo da DEU CAPA.</p>
-    <button id="restoreDemo" type="button" class="text-btn">Restaurar demonstração</button>
-  </footer>
-
-  <script src="admin.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DEU CAPA — Painel completo</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="admin.css"></head><body>
+<header class="admin-topbar"><div><p class="eyebrow">DEU CAPA</p><h1>Editor completo</h1><p class="top-note">Altere conteúdo, aparência e participantes.</p></div><div class="top-actions"><button id="saveAll" class="primary-btn" type="button">Salvar tudo</button><a href="index.html" class="outline-btn" target="_blank">Ver revista</a></div></header>
+<nav class="admin-tabs"><button data-tab="geral" class="active">Geral</button><button data-tab="capa">Capa</button><button data-tab="secoes">Seções</button><button data-tab="visual">Visual</button><button data-tab="participantes">Participantes</button></nav>
+<main class="admin-main">
+<section class="tab-panel active" data-panel="geral"><div class="panel-card"><h2>Identidade e contato</h2><div class="field-grid"><label>Nome da revista<input id="siteName"></label><label>Subtítulo<input id="siteSubtitle"></label><label>E-mail<input id="contactEmail"></label><label>Telefone<input id="contactPhone"></label><label>Instagram<input id="instagram"></label><label>Ano<input id="siteYear"></label></div><label>Frase da marca<textarea id="brandText" rows="3"></textarea></label></div><div class="panel-card"><h2>Visibilidade das seções</h2><div class="toggle-grid"><label><input type="checkbox" id="showParticipants"> Participantes</label><label><input type="checkbox" id="showEssay"> Ensaio</label><label><input type="checkbox" id="showGallery"> Galeria</label><label><input type="checkbox" id="showStats"> Números</label><label><input type="checkbox" id="showCta"> Próxima edição</label></div></div></section>
+<section class="tab-panel" data-panel="capa"><div class="panel-card"><h2>Capa principal</h2><div class="field-grid"><label>Edição<input id="editionLabel"></label><label>Título linha 1<input id="heroTitle1"></label><label>Título linha 2<input id="heroTitle2"></label></div><label>Texto da capa<textarea id="heroText" rows="3"></textarea></label><label>Texto do botão<input id="heroButton"></label><label class="photo-upload">Foto da capa<input id="heroImageInput" type="file" accept="image/*"><div id="heroPreview" class="wide-preview">Clique para trocar a foto da capa</div></label></div></section>
+<section class="tab-panel" data-panel="secoes"><div class="panel-card"><h2>Participantes em destaque</h2><div class="field-grid"><label>Etiqueta<input id="participantsLabel"></label><label>Título<input id="participantsTitle"></label></div><label>Descrição<textarea id="participantsText" rows="3"></textarea></label></div><div class="panel-card"><h2>Ensaio em destaque</h2><div class="field-grid"><label>Etiqueta<input id="essayLabel"></label><label>Título<input id="essayTitle"></label></div><label>Descrição<textarea id="essayText" rows="3"></textarea></label><label class="photo-upload">Foto do ensaio<input id="essayImageInput" type="file" accept="image/*"><div id="essayPreview" class="wide-preview">Clique para trocar a foto do ensaio</div></label></div><div class="panel-card"><h2>Galeria</h2><label>Título<input id="galleryTitle"></label><div id="galleryEditors" class="gallery-editors"></div></div><div class="panel-card"><h2>Números</h2><div class="field-grid"><label>Participantes<input id="stat1"></label><label>Ensaios<input id="stat2"></label><label>Cidades<input id="stat3"></label><label>Propósito<input id="stat4"></label></div></div><div class="panel-card"><h2>Chamada final</h2><label>Etiqueta<input id="ctaLabel"></label><label>Título<textarea id="ctaTitle" rows="2"></textarea></label><label>Descrição<textarea id="ctaText" rows="3"></textarea></label><label>Texto do botão<input id="ctaButton"></label></div></section>
+<section class="tab-panel" data-panel="visual"><div class="panel-card"><h2>Cores do site</h2><div class="color-grid"><label>Preto<input type="color" id="colorBlack"></label><label>Fundo claro<input type="color" id="colorPaper"></label><label>Dourado<input type="color" id="colorGold"></label><label>Dourado claro<input type="color" id="colorGold2"></label></div><div class="form-actions"><button id="resetColors" type="button" class="text-btn">Restaurar cores originais</button></div></div></section>
+<section class="tab-panel" data-panel="participantes"><div class="participants-layout"><div class="panel-card"><div class="section-title"><h2>Novo / editar participante</h2><button id="resetForm" class="text-btn" type="button">Limpar</button></div><form id="participantForm"><input type="hidden" id="participantId"><label class="photo-upload">Foto<input id="photoInput" type="file" accept="image/*"><div id="photoPreview" class="photo-preview">Adicionar foto</div></label><div class="field-grid"><label>Nome<input id="nameInput" required></label><label>Cidade / categoria<input id="roleInput"></label></div><label>Descrição<textarea id="bioInput" rows="4"></textarea></label><label>Instagram ou link<input id="socialInput"></label><button class="primary-btn" type="submit" id="saveButton">Publicar participante</button></form></div><div class="panel-card"><div class="section-title"><h2>Publicados</h2><span id="participantCount" class="count-badge">0</span></div><div id="adminList" class="admin-list"></div></div></div></section>
+</main><div class="save-bar"><span id="globalStatus">Alterações são salvas neste navegador.</span><button id="saveBottom" class="primary-btn" type="button">Salvar alterações</button></div><script src="admin.js"></script></body></html>
