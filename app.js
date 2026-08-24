@@ -8,7 +8,11 @@ const defaultParticipants = [
 function getParticipants(){
   try{
     const saved=JSON.parse(localStorage.getItem('deuCapaParticipants')||'null');
-    return Array.isArray(saved)&&saved.length?saved:defaultParticipants;
+    if(!Array.isArray(saved)||!saved.length)return defaultParticipants;
+    return saved.map((person,index)=>({
+      ...person,
+      photo:person.photo||defaultParticipants[index%defaultParticipants.length].photo
+    }));
   }catch{return defaultParticipants;}
 }
 
@@ -25,7 +29,8 @@ function renderParticipants(){
   participants.slice(0,8).forEach((person,index)=>{
     const card=document.createElement('button');
     card.className='participant-card';
-    const photoStyle=person.photo?`style="background-image:url('${String(person.photo).replace(/'/g,'%27')}')"`:'';
+    const photo=person.photo||defaultParticipants[index%defaultParticipants.length].photo;
+    const photoStyle=`style="background-image:url('${String(photo).replace(/'/g,'%27')}')"`;
     card.innerHTML=`
       <div class="participant-image" ${photoStyle} data-initial="${String(index+1).padStart(2,'0')}"></div>
       <div class="participant-meta">
@@ -33,7 +38,7 @@ function renderParticipants(){
         <p>${escapeHtml(person.role||'Participante')}</p>
         <span class="plus">+</span>
       </div>`;
-    card.addEventListener('click',()=>openProfile(person,index));
+    card.addEventListener('click',()=>openProfile({...person,photo},index));
     grid.appendChild(card);
   });
 }
@@ -41,13 +46,9 @@ function renderParticipants(){
 function openProfile(person,index){
   modalName.textContent=person.name;
   modalBio.textContent=person.bio||'';
-  if(person.photo){
-    modalPhoto.innerHTML='';
-    modalPhoto.style.backgroundImage=`url('${String(person.photo).replace(/'/g,'%27')}')`;
-  }else{
-    modalPhoto.style.backgroundImage='';
-    modalPhoto.innerHTML=`<span>FOTO ${String(index+1).padStart(2,'0')}</span>`;
-  }
+  const photo=person.photo||defaultParticipants[index%defaultParticipants.length].photo;
+  modalPhoto.innerHTML='';
+  modalPhoto.style.backgroundImage=`url('${String(photo).replace(/'/g,'%27')}')`;
   if(person.social){
     modalSocial.href=normalizeSocial(person.social);
     modalSocial.style.display='inline-block';
