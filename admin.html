@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEU CAPA — Painel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="admin-topbar">
+    <div>
+      <p class="eyebrow">DEU CAPA</p>
+      <h1>Painel da revista</h1>
+    </div>
+    <a href="index.html" class="outline-btn">Ver revista</a>
+  </header>
+
+  <main class="admin-shell">
+    <section class="editor-card">
+      <div class="section-title">
+        <div>
+          <span class="step">01</span>
+          <h2>Novo participante</h2>
+        </div>
+        <button id="resetForm" class="text-btn" type="button">Limpar</button>
+      </div>
+
+      <form id="participantForm">
+        <input type="hidden" id="participantId" />
+
+        <label class="photo-upload" for="photoInput">
+          <input id="photoInput" type="file" accept="image/*" hidden />
+          <div id="photoPreview" class="photo-preview">
+            <span>+</span>
+            <strong>Adicionar foto</strong>
+            <small>JPG, PNG ou WEBP</small>
+          </div>
+        </label>
+
+        <div class="field-grid">
+          <label>Nome
+            <input id="nameInput" maxlength="60" required placeholder="Ex.: Ana Souza" />
+          </label>
+          <label>Destaque / categoria
+            <input id="roleInput" maxlength="60" placeholder="Ex.: Ensaio especial" />
+          </label>
+        </div>
+
+        <label>Descrição
+          <textarea id="bioInput" maxlength="320" rows="5" placeholder="Uma apresentação curta sobre a pessoa, ensaio ou história..."></textarea>
+          <small><span id="bioCount">0</span>/320</small>
+        </label>
+
+        <label>Instagram ou link
+          <input id="socialInput" placeholder="@usuario ou https://..." />
+        </label>
+
+        <div class="form-actions">
+          <button class="primary-btn" type="submit" id="saveButton">Publicar participante</button>
+          <p id="saveStatus" role="status"></p>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-card">
+      <div class="section-title">
+        <div>
+          <span class="step">02</span>
+          <h2>Publicados</h2>
+        </div>
+        <span class="count-badge" id="participantCount">0</span>
+      </div>
+      <div id="adminList" class="admin-list"></div>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <p>Protótipo administrativo da DEU CAPA.</p>
+    <button id="restoreDemo" type="button" class="text-btn">Restaurar demonstração</button>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>
