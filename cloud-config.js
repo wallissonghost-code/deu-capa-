@@ -1,0 +1,1 @@
+window.DEUCAPA_CLOUD_CONFIG={url:'https://dbcfoqekmydbgknijizg.supabase.co',key:'sb_publishable_LnDnsb29BGCuVsMCyNYVRg_lD73Srfw',bucket:'deu-capa-media'};
